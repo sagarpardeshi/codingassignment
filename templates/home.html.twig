@@ -1,0 +1,82 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+
+<!-- Page Content -->
+<div class="container">
+    <!-- Jumbotron Header -->
+    <header class="jumbotron my-4">
+        <h1 class="display-3">A Warm Welcome!</h1>
+        <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa, ipsam, eligendi, in quo sunt possimus non incidunt odit vero aliquid similique quaerat nam nobis illo aspernatur vitae fugiat numquam repellat.</p>
+        <a href="javascript:void(0);" class="btn btn-primary btn-lg">Call to action!</a>
+    </header>
+    <!-- Page Features -->
+
+
+<div class="accordion mb-4" id="accordionExample">
+  <div class="card">
+    <div class="card-header" id="headingOne">
+      <h2 class="mb-0">
+        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          Bundles
+        </button>
+      </h2>
+    </div>
+
+    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+      <div class="card-body">
+
+    <div class="row text-center">
+        {% for bundle in bundles %}
+        <div class="col-lg-3 col-md-6 mb-4">
+            <div class="card h-100">
+                <img class="card-img-top" src="http://placehold.it/500x325" alt="">
+                <div class="card-body">
+                    <h4 class="card-title">{{ bundle.name }}</h4>
+                    <p class="card-text">{{ bundle.description|raw }}</p>
+                </div>
+                <div class="card-footer">
+                    <p>{{ bundle.getPlatform }} | {{ bundle.getProvider }}</p>
+                    <a href="javascript:void(0);" class="btn btn-primary" data-price="{{bundle.price}}">{{ (bundle.price*conversion_rate)|format_currency(currency) }}</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header" id="headingTwo">
+      <h2 class="mb-0">
+        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+          Providers
+        </button>
+      </h2>
+    </div>
+    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+      <div class="card-body">
+
+    <div class="row text-center">
+        {% for provider in providers %}
+        <div class="col-lg-3 col-md-6 mb-4">
+            <div class="card h-100">
+                <img class="card-img-top" src="http://placehold.it/500x325" alt="">
+                <div class="card-body">
+                    <h4 class="card-title">{{ provider.name }}</h4>
+                    <p class="card-text">{{ provider.description|raw }}</p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+    <!-- /.row -->
+</div>
+<!-- /.container -->
+{% endblock %}

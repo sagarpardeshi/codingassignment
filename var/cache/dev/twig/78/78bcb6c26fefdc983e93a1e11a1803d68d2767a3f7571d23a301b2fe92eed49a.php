@@ -24,10 +24,15 @@ class __TwigTemplate_73b311685f2340f0e3b60616a9750d1b4963783055c5ac9ffab03170065
 
         $this->source = $this->getSourceContext();
 
-        $this->parent = false;
-
         $this->blocks = [
+            'body' => [$this, 'block_body'],
         ];
+    }
+
+    protected function doGetParent(array $context)
+    {
+        // line 1
+        return "base.html.twig";
     }
 
     protected function doDisplay(array $context, array $blocks = [])
@@ -39,10 +44,28 @@ class __TwigTemplate_73b311685f2340f0e3b60616a9750d1b4963783055c5ac9ffab03170065
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "frontend/home.html.twig"));
 
-        // line 1
-        echo twig_include($this->env, $context, "frontend/partial/header.html.twig");
-        echo "
+        $this->parent = $this->loadTemplate("base.html.twig", "frontend/home.html.twig", 1);
+        $this->parent->display($context, array_merge($this->blocks, $blocks));
+        
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
 
+        
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
+
+    }
+
+    // line 3
+    public function block_body($context, array $blocks = [])
+    {
+        $macros = $this->macros;
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
+
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
+
+        // line 4
+        echo "
 <!-- Page Content -->
 <div class=\"container\">
     <!-- Jumbotron Header -->
@@ -69,34 +92,34 @@ class __TwigTemplate_73b311685f2340f0e3b60616a9750d1b4963783055c5ac9ffab03170065
 
     <div class=\"row text-center\">
         ";
-        // line 28
+        // line 30
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["bundles"]) || array_key_exists("bundles", $context) ? $context["bundles"] : (function () { throw new RuntimeError('Variable "bundles" does not exist.', 28, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["bundles"]) || array_key_exists("bundles", $context) ? $context["bundles"] : (function () { throw new RuntimeError('Variable "bundles" does not exist.', 30, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["bundle"]) {
-            // line 29
+            // line 31
             echo "        <div class=\"col-lg-3 col-md-6 mb-4\">
             <div class=\"card h-100\">
                 <img class=\"card-img-top\" src=\"http://placehold.it/500x325\" alt=\"\">
                 <div class=\"card-body\">
                     <h4 class=\"card-title\">";
-            // line 33
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["bundle"], "name", [], "any", false, false, false, 33), "html", null, true);
+            // line 35
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["bundle"], "name", [], "any", false, false, false, 35), "html", null, true);
             echo "</h4>
                     <p class=\"card-text\">";
-            // line 34
-            echo twig_get_attribute($this->env, $this->source, $context["bundle"], "description", [], "any", false, false, false, 34);
+            // line 36
+            echo twig_get_attribute($this->env, $this->source, $context["bundle"], "description", [], "any", false, false, false, 36);
             echo "</p>
                 </div>
                 <div class=\"card-footer\">
                     <p>";
-            // line 37
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["bundle"], "getPlatform", [], "any", false, false, false, 37), "html", null, true);
+            // line 39
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["bundle"], "getPlatform", [], "any", false, false, false, 39), "html", null, true);
             echo " | ";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["bundle"], "getProvider", [], "any", false, false, false, 37), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["bundle"], "getProvider", [], "any", false, false, false, 39), "html", null, true);
             echo "</p>
                     <a href=\"javascript:void(0);\" class=\"btn btn-primary\">";
-            // line 38
-            echo twig_escape_filter($this->env, $this->extensions['Twig\Extra\Intl\IntlExtension']->formatCurrency(twig_get_attribute($this->env, $this->source, $context["bundle"], "price", [], "any", false, false, false, 38), (isset($context["currency"]) || array_key_exists("currency", $context) ? $context["currency"] : (function () { throw new RuntimeError('Variable "currency" does not exist.', 38, $this->source); })())), "html", null, true);
+            // line 40
+            echo twig_escape_filter($this->env, $this->extensions['Twig\Extra\Intl\IntlExtension']->formatCurrency(twig_get_attribute($this->env, $this->source, $context["bundle"], "price", [], "any", false, false, false, 40), (isset($context["currency"]) || array_key_exists("currency", $context) ? $context["currency"] : (function () { throw new RuntimeError('Variable "currency" does not exist.', 40, $this->source); })())), "html", null, true);
             echo "</a>
                 </div>
             </div>
@@ -106,7 +129,7 @@ class __TwigTemplate_73b311685f2340f0e3b60616a9750d1b4963783055c5ac9ffab03170065
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['bundle'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 43
+        // line 45
         echo "    </div>
 
       </div>
@@ -125,22 +148,22 @@ class __TwigTemplate_73b311685f2340f0e3b60616a9750d1b4963783055c5ac9ffab03170065
 
     <div class=\"row text-center\">
         ";
-        // line 60
+        // line 62
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["providers"]) || array_key_exists("providers", $context) ? $context["providers"] : (function () { throw new RuntimeError('Variable "providers" does not exist.', 60, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["providers"]) || array_key_exists("providers", $context) ? $context["providers"] : (function () { throw new RuntimeError('Variable "providers" does not exist.', 62, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["provider"]) {
-            // line 61
+            // line 63
             echo "        <div class=\"col-lg-3 col-md-6 mb-4\">
             <div class=\"card h-100\">
                 <img class=\"card-img-top\" src=\"http://placehold.it/500x325\" alt=\"\">
                 <div class=\"card-body\">
                     <h4 class=\"card-title\">";
-            // line 65
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["provider"], "name", [], "any", false, false, false, 65), "html", null, true);
+            // line 67
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["provider"], "name", [], "any", false, false, false, 67), "html", null, true);
             echo "</h4>
                     <p class=\"card-text\">";
-            // line 66
-            echo twig_get_attribute($this->env, $this->source, $context["provider"], "description", [], "any", false, false, false, 66);
+            // line 68
+            echo twig_get_attribute($this->env, $this->source, $context["provider"], "description", [], "any", false, false, false, 68);
             echo "</p>
                 </div>
             </div>
@@ -150,7 +173,7 @@ class __TwigTemplate_73b311685f2340f0e3b60616a9750d1b4963783055c5ac9ffab03170065
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['provider'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 71
+        // line 73
         echo "    </div>
 
       </div>
@@ -161,13 +184,11 @@ class __TwigTemplate_73b311685f2340f0e3b60616a9750d1b4963783055c5ac9ffab03170065
 </div>
 <!-- /.container -->
 ";
-        // line 80
-        echo twig_include($this->env, $context, "frontend/partial/footer.html.twig");
-        
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
-
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
+
+        
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
 
     }
 
@@ -183,12 +204,14 @@ class __TwigTemplate_73b311685f2340f0e3b60616a9750d1b4963783055c5ac9ffab03170065
 
     public function getDebugInfo()
     {
-        return array (  165 => 80,  154 => 71,  143 => 66,  139 => 65,  133 => 61,  129 => 60,  110 => 43,  99 => 38,  93 => 37,  87 => 34,  83 => 33,  77 => 29,  73 => 28,  43 => 1,);
+        return array (  177 => 73,  166 => 68,  162 => 67,  156 => 63,  152 => 62,  133 => 45,  122 => 40,  116 => 39,  110 => 36,  106 => 35,  100 => 31,  96 => 30,  68 => 4,  58 => 3,  35 => 1,);
     }
 
     public function getSourceContext()
     {
-        return new Source("{{ include('frontend/partial/header.html.twig') }}
+        return new Source("{% extends \"base.html.twig\" %}
+
+{% block body %}
 
 <!-- Page Content -->
 <div class=\"container\">
@@ -267,6 +290,6 @@ class __TwigTemplate_73b311685f2340f0e3b60616a9750d1b4963783055c5ac9ffab03170065
     <!-- /.row -->
 </div>
 <!-- /.container -->
-{{ include('frontend/partial/footer.html.twig') }}", "frontend/home.html.twig", "F:\\XAMPP\\htdocs\\connectr\\templates\\frontend\\home.html.twig");
+{% endblock %}", "frontend/home.html.twig", "F:\\XAMPP\\htdocs\\connectr\\templates\\frontend\\home.html.twig");
     }
 }
